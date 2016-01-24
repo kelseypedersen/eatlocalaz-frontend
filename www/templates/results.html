@@ -2,7 +2,8 @@
     <ion-content>
         <ion-list>
             <ion-item ng-repeat="restaurant in response" ng-click="clickEvent(restaurant)" href="#/app/details/{{ restaurant.id }}">
-                    {{ restaurant.name }}
+                <p>{{restaurant.name}}</p>
+                    <img src="{{restaurant.rating_img_url_small}}">
             </ion-item>
         </ion-list>
     </ion-content>

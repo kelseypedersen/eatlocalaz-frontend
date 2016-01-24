@@ -1,15 +1,27 @@
 <ion-view view-title="Details">
     <ion-content>
+        <div class="list card">
 
-        <h1>{{  Data.name }}</h1>
-        <h3>{{ Data.display_phone }}</h3>
-        <h1>{{ Data.rating }}</h1>
-        <img src="{{ Data.image_url }}">
-        {{ Data.id }}
-        {{ Data.location.cross_streets }}
-        <img src="{{ Data.rating_img_url_small }}">
+            <div class="item item-avatar">
+                <i class="ion-android-restaurant"></i>
 
 
+                    <h2>{{ Data.name }}</h2>
+                    <p>{{ Data.location.cross_streets }}</p>
+      
+            </div>
+
+
+            <h1></h1>
+
+            <h3>{{ Data.display_phone }}</h3>
+
+            <h1>{{ Data.rating }}</h1>
+            <img src="{{ Data.image_url }}">
+            {{ Data.id }}
+
+            <img src="{{ Data.rating_img_url_small }}">
+        </div>
 
     </ion-content>
 </ion-view>

@@ -61,8 +61,28 @@ angular.module('starter.controllers', [])
             {title: 'C', id: 3},
             {title: 'D', id: 4},
             {title: 'E', id: 5},
-            {title: 'F', id: 6}
-        ];
+            {title: 'F', id: 6},
+            {title: 'G', id: 7},
+            {title: 'H', id: 8},
+            {title: 'I', id: 9},
+            {title: 'J', id: 10},
+            {title: 'K', id: 11},
+            {title: 'L', id: 12},
+            {title: 'M', id: 13},
+            {title: 'N', id: 14},
+            {title: 'O', id: 15},
+            {title: 'P', id: 16},
+            {title: 'Q', id: 17},
+            {title: 'R', id: 18},
+            {title: 'S', id: 19},
+            {title: 'T', id: 20},
+            {title: 'U', id: 21},
+            {title: 'V', id: 22},
+            {title: 'W', id: 23},
+            {title: 'X', id: 24},
+            {title: 'Y', id: 25},
+            {title: 'Z', id: 26}
+        ]
     })
 
     .controller('PlaylistCtrl', function ($scope, $stateParams) {
@@ -74,7 +94,34 @@ angular.module('starter.controllers', [])
 
         $scope.letter = function () {
 
-            var categories = {"A": ["Afghan", "African", "American"], "B": ["BBQ"]};
+            var categories = {
+                A: ["Afghan", "African", "American (New)", "American (Traditional)", "Arabian", "Argentine", "Armenian", "Asian Fusion", "Australian", "Austrian"],
+                B: ["Bangladeshi", "Barbeque", "Basque", "Belgian", "Brasseries", "Brazilian", "Breakfast & Brunch", "British", "Buffets", "Burgers", "Burmese"],
+                C: ["Cafes", "Cafeteria", "Cajun/Creole", "Calabrian", "Cambodian", "Cantonese", "Caribbean", "Catalan", "Cheesesteaks", "Chicken Shop", "Chicken Wings", "Chinese", "Colombian", "Comfort Food", "Creperies", "Cuban", "Czech"],
+                D: ["Delis", "Dim Sum", "Diners", "Dominican"],
+                E: ["Egyptian", "Ethiopian"],
+                F: ["Falafel", "Fast Food", "Filipino", "Fish & Chips", "Fondue", "Food Court", "Food Stands", "French"],
+                G: ["Gastropubs", "German", "Gluten-Free", "Greek"],
+                H: ["Haitian", "Halal", "Hawaiian", "Himalayan/Nepalese", "Hot Dogs", "Hot Pot", "Hungarian"],
+                I: ["Iberian", "Indian", "Indonesian", "Irish", "Italian"],
+                J: ["Japanese"],
+                K: ["Korean", "Kosher"],
+                L: ["Laotian", "Latin American", "Lebanese", "Live/Raw Food"],
+                M: ["Malaysian", "Mediterranean", "Mexican", "Middle Eastern", "Modern European", "Mongolian", "Moroccan"],
+                N: [],
+                O: [],
+                P: ["Pakistani", "Persian/Iranian", "Peruvian", "Pizza", "Polish", "Portuguese", "Poutineries", "Puerto Rican"],
+                Q: [],
+                R: ["Ramen", "Russian"],
+                S: ["Salad", "Salvadoran", "Sandwiches", "Sardinian", "Scandinavian", "Scottish", "Seafood", "Senegalese", "Shanghainese", "Singaporean", "Slovakian", "Soul Food", "Soup", "South African", "Southern", "Spanish", "Sri Lankan", "Steakhouses", "Supper Clubs", "Sushi Bars", "Syrian", "Szechuan"],
+                T: ["Taiwanese", "Tapas Bars", "Tapas/Small Plates", "Teppanyaki", "Tex-Mex", "Thai", "Trinidadian", "Turkish", "Tuscan"],
+                U: ["Ukrainian", "Uzbek"],
+                V: ["Vegan", "Vegetarian", "Venezuelan", "Vietnamese"],
+                W: [],
+                X: [],
+                Y: [],
+                Z: [],
+            };
 
             var letter = $stateParams.letter;
 
@@ -91,11 +138,15 @@ angular.module('starter.controllers', [])
     .controller('ResultsCtrl', function ($scope, $stateParams, $http, Data) {
         $scope.Data = Data;
 
-        var cuisine = $stateParams.cuisine;
+        //console.log("this is the hello" + $stateParams.cuisine);
+
+        var input_cuisine = $stateParams.cuisine;
+
+        var input_cuisine = input_cuisine.replace(/ /g,"_");
 
         $http({
             method: 'GET',
-            url: 'http://eat-local-a-z.herokuapp.com/api/' + cuisine + '/37/104',
+            url: 'http://eat-local-a-z.herokuapp.com/api/' + input_cuisine + '/37/104',
             headers: {
                 'Content-Type': 'application/json; charset=utf-8'
             },
@@ -125,11 +176,7 @@ angular.module('starter.controllers', [])
 
     .controller('DetailsCtrl', function ($scope, $stateParams, Data) {
         $scope.Data = Data;
-        console.log($scope.response);
 
-        //console.log($stateParams.response);
-
-        console.log($stateParams);
         $scope.details = [
             // Add details for one Yelp restaurant here
             // Response will be coming from the Yelp Business API
