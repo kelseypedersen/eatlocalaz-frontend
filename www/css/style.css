@@ -1,0 +1,18 @@
+/* Empty. Add your own CSS if you like */
+
+.item-avatar {
+    padding-left: 20px !important;
+}
+
+.main-content {
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.ion-ios-telephone {
+    margin-right: 5px;
+}
+
+.item-text-wrap {
+    padding-left: 20 !important;
+}
