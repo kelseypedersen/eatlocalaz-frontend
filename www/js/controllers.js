@@ -142,7 +142,7 @@ angular.module('starter.controllers', [])
 
         var input_cuisine = $stateParams.cuisine;
 
-        var input_cuisine = input_cuisine.replace(/ /g,"_");
+        var input_cuisine = input_cuisine.replace(/ /g, "_");
 
         $http({
             method: 'GET',
@@ -170,6 +170,7 @@ angular.module('starter.controllers', [])
             $scope.Data.rating_img_url_small = restaurant.rating_img_url_small;
             $scope.Data.image_url = restaurant.image_url;
             $scope.Data.display_phone = restaurant.display_phone;
+            $scope.Data.snippet_text = restaurant.snippet_text;
         };
     })
 
@@ -177,11 +178,19 @@ angular.module('starter.controllers', [])
     .controller('DetailsCtrl', function ($scope, $stateParams, Data) {
         $scope.Data = Data;
 
-        $scope.details = [
-            // Add details for one Yelp restaurant here
-            // Response will be coming from the Yelp Business API
-            // Params passed will be the Yelp ID key
-        ]
+
+        console.log(Data.location);
+
+        console.log(Data);
+        var address = Data.location.display_address[0] || "";
+
+        address = address.replace(/ /g, "+");
+
+        $scope.map = "https://www.google.com/maps/place/" + address + ",+San+Francisco,+CA";
+
+        console.log($scope.map);
+
+
     })
 
     .factory('Data', function () {
@@ -192,6 +201,7 @@ angular.module('starter.controllers', [])
             location: '',
             rating_img_url_small: '',
             image_url: '',
+            snippet_text: '',
             display_phone: ''
         }
     });
