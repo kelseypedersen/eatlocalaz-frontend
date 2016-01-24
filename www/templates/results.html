@@ -1,1 +1,9 @@
-<h1>This is the results page</h1>
+<ion-view view-title="Results">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="restaurant in response" ng-click="clickEvent(restaurant)" href="#/app/details/{{ restaurant.id }}">
+                    {{ restaurant.name }}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

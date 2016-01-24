@@ -1,1 +1,9 @@
-<h1>This is the letters page</h1>
+<ion-view view-title="Letters">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="letter in letters" href="#/app/letters/{{letter.title}}">
+            {{letter.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
