@@ -1,0 +1,10 @@
+<ion-view view-title=" {{ header }}">
+        <ion-content>
+            <ion-list>
+                <ion-item ng-repeat="cuisines in results" href="#/app/{{cuisines}}">
+                    {{ cuisines }}
+                </ion-item>
+            </ion-list>
+        </ion-content>
+</ion-view>
+

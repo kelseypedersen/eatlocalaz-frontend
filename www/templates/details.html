@@ -1,0 +1,35 @@
+<ion-view view-title="Details">
+    <ion-content>
+        <div class="list card">
+
+
+
+            <div class="item item-avatar">
+
+                <p style="text-align: center"><img src="{{ Data.image_url }}"></p>
+
+                <h1 style="text-align: center">{{ Data.name }}</h1>
+
+            </div>
+            <div class="main-content">
+
+                <p><a href="{{ map }}">{{ Data.location.cross_streets }}</a></p>
+
+                <p><i class="icon ion-ios-telephone"></i>{{ Data.display_phone }}</p>
+
+                <p>Yelp Rating: {{ Data.rating }}</p>
+
+                <p><img src="{{ Data.rating_img_url_small }}"></p>
+
+            </div>
+            <div class="item item-text-wrap">
+
+                <p style="font-weight: 600">Hunter says...</p>
+
+                <p>"{{ Data.snippet_text }}"</p>
+            </div>
+
+        </div>
+
+    </ion-content>
+</ion-view>
